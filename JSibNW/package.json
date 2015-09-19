@@ -1,0 +1,23 @@
+{
+  "name": "JSibNW",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "nodewebkit",
+      "build": "gulp nw"
+  },
+  "window": {
+    "toolbar": false,
+    "width": 800,
+    "height": 600
+  },
+  "author": "Mikhail Reenko",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6",
+    "nodewebkit": "^0.11.6",
+    "nw-builder": "^2.0.2"
+  }
+}

@@ -1,0 +1,47 @@
+<html>
+    <body>
+        <script>
+            document.write(JSON.stringify(process.versions));
+            // Load native UI library
+            var gui = require('nw.gui'),
+                aboutWindow;
+
+            // Create menu
+            var menu = new gui.Menu({ type: 'menubar' });
+
+            // Create sub-menu
+            var menuItems = new gui.Menu()
+
+            var about = new gui.MenuItem({ label: 'About' });
+            about.click = function () {
+                aboutWindow = gui.Window.open('about.html', {
+                    toolbar: false,
+                    position: 'center',
+                    width: 300,
+                    height: 300
+                });
+            }
+
+            menuItems.append(about);
+
+            // Append MenuItem as a Submenu
+            menu.append(
+                 new gui.MenuItem({
+                    label: 'JSib',
+                    submenu: menuItems
+                })
+            );
+
+            // Append Menu to Window
+            gui.Window.get().menu = menu;
+            
+            gui.Window.get().on('close', function() {
+                this.hide();
+                if (aboutWindow != null) {
+                    aboutWindow.close(true);
+                }
+                this.close(true);
+            });
+        </script>
+    </body>
+</html>

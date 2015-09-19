@@ -1,0 +1,16 @@
+{
+  "name": "JSibElectron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager ./ JSibApp --ignore=node_modules/electron-* --ignore=JSibApp* --platform=all --arch=x64 --version=0.32.3"
+  },
+  "author": "Mikhail Reenko",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-packager": "^5.1.0",
+    "electron-prebuilt": "^0.33.0"
+  }
+}
